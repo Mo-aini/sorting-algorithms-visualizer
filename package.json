@@ -1,0 +1,12 @@
+{
+  "name": "sorting-algorithms-visualizer",
+  "version": "1.0.0",
+  "description": "Animated sorting algorithms visualizer in vanilla JavaScript",
+  "private": true,
+  "scripts": {
+    "test": "node --test",
+    "start": "npx --yes serve ."
+  },
+  "author": "Mohammed Emad ALaini",
+  "license": "MIT"
+}
