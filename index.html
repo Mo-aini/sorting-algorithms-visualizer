@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sorting Algorithms Visualizer</title>
+  <meta name="description" content="Animated visualizer for bubble, selection, insertion, merge, quick and heap sort with live comparison and swap counters." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <h1>Sorting Algorithms Visualizer</h1>
+    </div>
+    <nav class="algo-pills" id="algoPills" aria-label="Choose algorithm"></nav>
+  </header>
+
+  <main class="layout">
+    <section class="stage-card">
+      <div class="controls">
+        <div class="control">
+          <label for="size">Array size <output id="sizeOut">40</output></label>
+          <input type="range" id="size" min="5" max="150" value="40" />
+        </div>
+        <div class="control">
+          <label for="speed">Speed <output id="speedOut">60</output></label>
+          <input type="range" id="speed" min="1" max="100" value="60" />
+        </div>
+        <div class="buttons">
+          <button id="newArray" class="btn ghost" title="New random array (N)">New array</button>
+          <button id="stepBtn" class="btn ghost" title="One step (S)">Step</button>
+          <button id="playBtn" class="btn primary" title="Start / pause (Space)">Start</button>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><span>Comparisons</span><strong id="cmpCount">0</strong></div>
+        <div class="stat"><span>Swaps</span><strong id="swapCount">0</strong></div>
+        <div class="stat"><span>Writes</span><strong id="writeCount">0</strong></div>
+        <div class="stat"><span>Status</span><strong id="status">Ready</strong></div>
+      </div>
+
+      <div class="bars" id="bars" aria-label="Array bars"></div>
+
+      <ul class="legend">
+        <li><i class="sw default"></i>Unsorted</li>
+        <li><i class="sw compare"></i>Comparing</li>
+        <li><i class="sw swap"></i>Swapping / writing</li>
+        <li><i class="sw pivot"></i>Pivot</li>
+        <li><i class="sw sorted"></i>Sorted</li>
+      </ul>
+    </section>
+
+    <aside class="side">
+      <section class="card info" id="info">
+        <h2 id="infoTitle">Bubble Sort</h2>
+        <p id="infoText"></p>
+        <table class="complexity">
+          <tbody>
+            <tr><th>Best</th><td id="cBest"></td></tr>
+            <tr><th>Average</th><td id="cAvg"></td></tr>
+            <tr><th>Worst</th><td id="cWorst"></td></tr>
+            <tr><th>Space</th><td id="cSpace"></td></tr>
+            <tr><th>Stable</th><td id="cStable"></td></tr>
+            <tr><th>In-place</th><td id="cInPlace"></td></tr>
+          </tbody>
+        </table>
+        <p class="use"><b>Use when:</b> <span id="infoUse"></span></p>
+      </section>
+
+      <section class="card compare-card">
+        <div class="compare-head">
+          <h2>Compare all</h2>
+          <button id="compareBtn" class="btn ghost small">Run on this array</button>
+        </div>
+        <p class="hint">Runs every algorithm on a copy of the current array and counts its operations.</p>
+        <table class="results" id="results">
+          <thead><tr><th>Algorithm</th><th>Comparisons</th><th>Swaps</th><th>Writes</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    Built with vanilla HTML, CSS &amp; JavaScript by Mohammed Emad ALaini · Shortcuts: <kbd>Space</kbd> start/pause · <kbd>S</kbd> step · <kbd>N</kbd> new array
+  </footer>
+
+  <script src="js/algorithms.js"></script>
+  <script src="js/complexity.js"></script>
+  <script src="js/visualizer.js"></script>
+</body>
+</html>
